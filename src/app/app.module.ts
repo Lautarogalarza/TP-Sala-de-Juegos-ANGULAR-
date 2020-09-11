@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
-//  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+ import * as $ from 'jquery';
 import { HttpModule } from '@angular/http';
-
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
@@ -53,6 +54,10 @@ import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-goog
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
+import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
+import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { MemoTestComponent } from './componentes/memo-test/memo-test.component';
+import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 
 @NgModule({
   declarations: [
@@ -78,13 +83,19 @@ import { SexoPipe } from './pipes/sexo.pipe';
     MapaDeGoogleComponent,
     JugadoresListadoComponent,
     InputJugadoresComponent,
-    SexoPipe
+    SexoPipe,
+    TaTeTiComponent,
+    PiedraPapelTijeraComponent,
+    MemoTestComponent,
+    AhorcadoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    NgbModule,
     RuteandoModule,
     HttpModule,
+    IvyCarouselModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

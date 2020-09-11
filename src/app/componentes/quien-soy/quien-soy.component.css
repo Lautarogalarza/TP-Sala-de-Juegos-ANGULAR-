@@ -28,6 +28,21 @@ p {font-size: 16px;}
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
+    background-attachment: fixed;
+}
+
+.container-fluid-footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-attachment: fixed;
+}
+
+
+.container-fluid-1{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-attachment: fixed;
+    background: rgba(0,0,0,.5);
 }
 .navbar {
     padding-top: 15px;
@@ -41,3 +56,56 @@ p {font-size: 16px;}
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
 }
+
+.imgcontainer {
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    height: 10%;
+}
+
+img.avatar {
+    margin-top: 10px;   
+    width: 40%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.avatar{
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  img.avatar:hover,img.contact:hover
+  {
+      transform:scale(1.05);
+  }
+
+  .contact{
+    width: 80%;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .contactContainerG{
+    position: fixed;
+    bottom: 1em;
+    right: 1em
+  }
+
+  .contactContainerL{
+    position: fixed;
+    bottom: 1em;
+    right: 7em;
+    
+   
+  }
+
+  .contactContainerI{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    
+   
+  }

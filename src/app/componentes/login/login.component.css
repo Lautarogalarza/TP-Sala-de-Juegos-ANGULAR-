@@ -1,69 +1,103 @@
-
-form {
-    border: 10px solid #f1f1f1;
-    padding: 10px;
-    background:gray;
+*{
+    margin: 0%;
+    padding: 0%;
+    outline: none;
+    
 }
 
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-.cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-}
-.aceptbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #3664F4;
-}
-.imgcontainer {
+  .loginContenedor{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
     text-align: center;
-    margin: 24px 0 12px 0;
+    justify-content: center;
+  }
+
+
+  .login{
+
+    text-align: center;
+    background: rgba(0,0,0,.5);
+    position: absolute;
+    top: 50%;
+    width: 50vw; 
+    height: 60vh;  
+    transform: translateY(-50%);
+    overflow: hidden;
+  }
+
+  .imgcontainer {
+    width: 100%;
+    height: 10%;
+
 }
 
+.subLogin{
+
+  padding: 100px 20px;
+  margin: 8px 0;
+}
 img.avatar {
     width: 40%;
-    border-radius: 50%;
 }
 
-.container {
-    padding: 16px;
+
+
+  input[type=email],[type=password]{
+    width: 50%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: thin;
+    border-style: solid;
+    border-radius: 4px;
+    border-color:#C5EDF4;
+    box-sizing: border-box;
+    background-color: transparent;
+   
 }
 
-span.psw {
-    float: right;
-    padding-top: 16px;
+::placeholder{
+    color: #C5EDF4;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
+
+.error{
+  display: flex;
+  color: red;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 15%;
+  font-size: 1em;
+  font-family: "Arial Narrow", Arial, "Helvetica Condensed", Helvetica, sans-serif;
+  letter-spacing: 1px;
 }
+
+.botonRegister,.botonLogin{
+
+    display: inline-block;
+    background:#C5EDF4;
+    border-radius: 4px;
+    border: none;
+    width: 24%;
+    height: 5vh;
+    margin: 1%;
+    cursor: pointer;
+    color: rgb(47, 47, 47);
+    transition: 0.5s;
+    outline: none;
+    font-size: 2.5vh;
+  
+  }
+
+  .botonRegister:hover, .botonLogin:hover
+  {
+      background: lightskyblue;
+      transform:scale(1.05);
+  }
+
+
+

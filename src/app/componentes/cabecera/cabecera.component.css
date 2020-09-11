@@ -1,35 +1,51 @@
-.panel
-{
-    height: 200px;
-    background-image: url("/TP_LAV4_2017/assets/imagenes/cabecera.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+
+
+.imgcontainer {
+    position: absolute;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+}
+
+.botoncontainer {
+    position: absolute;
+    right: 2%;
+}
+
+.quiensoyboton{
+    margin-top: 10px;   
+    width: 50%;
+    margin-left: auto;
+    display:block;
+}
+
+.salircontainer {
+    position: absolute;
+    left:1%;
+}
+
+.salirboton{
+    margin-top: 4px;   
+    width: 60%;
+    display: block;
+  margin-right: auto;
+}
+
+img.avatar {
+    margin-top: 10px;   
+    width: 40%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
-.hero-text {
-text-align: center;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-color: #3E06B0;
-}
+  img.salirboton,img.quiensoyboton{
+    transition: 0.5s;
+    cursor: pointer;
+  }
 
-.hero-text a {
-border: none;
-outline: 0;
-display: inline-block;
-padding: 10px 25px;
-color: black;
-background-color: #ddd;
-text-align: center;
-cursor: pointer;
-}
+   img.quiensoyboton:hover,img.salirboton:hover
+  {
+      transform:scale(1.05);
+  }
 
-.hero-text a:hover {
-background-color: #555;
-color: white;
-}

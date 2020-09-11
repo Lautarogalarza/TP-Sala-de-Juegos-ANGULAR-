@@ -1,0 +1,45 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: '8BITWONDERNominal';
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+}
+
+
+.tabla
+{
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    transform: rotate(-50%,-50%);
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border-radius: 10px;
+    width: 70%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    border: 1px solid;
+    border-color: #C5EDF4;
+}
+
+th
+{
+    color: ghostwhite;
+    padding: 2%;
+    border-bottom: 1px solid;
+    border-radius: 15px;
+}
+
+td
+{
+    color: ghostwhite;
+    padding: 2%;
+}
+
+
+
+
