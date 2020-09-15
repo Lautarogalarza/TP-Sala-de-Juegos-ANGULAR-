@@ -32,19 +32,7 @@
   
 }
 
-::ng-deep.carousel-control-next-icon:after
-{
-  /*content: '>';
-  font-size: 55px;
-  color: navy;
- /* opacity: 200;*/
-}
 
-::ng-deep.carousel-control-prev-icon:after {
- /* content: '<';
-  font-size: 55px;
-  color: navy;*/
-}
 
 
 .login{
@@ -55,8 +43,8 @@
     border-radius: 10%;
     position: absolute;
     top: 50%;
-    width: 70vw; 
-    height: 65vh;  
+    width: 60vw; 
+    height: 55vh;  
     transform: translateY(-50%);
     overflow: hidden;
 }

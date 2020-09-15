@@ -54,10 +54,11 @@ import { MapaDeGoogleComponent } from './componentes/mapa-de-google/mapa-de-goog
 import { AgmCoreModule } from '@agm/core';
 import { InputJugadoresComponent } from './componentes/input-jugadores/input-jugadores.component';
 import { SexoPipe } from './pipes/sexo.pipe';
-import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
+//import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { MemoTestComponent } from './componentes/memo-test/memo-test.component';
 import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
+import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 
 @NgModule({
   declarations: [
@@ -84,10 +85,11 @@ import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    TaTeTiComponent,
+   // TaTeTiComponent,
     PiedraPapelTijeraComponent,
     MemoTestComponent,
-    AhorcadoComponent
+    AhorcadoComponent,
+    TaTeTiComponent
   ],
   imports: [
     BrowserModule,

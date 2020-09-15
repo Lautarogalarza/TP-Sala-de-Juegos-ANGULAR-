@@ -8,18 +8,29 @@ import { JuegoAdivina } from '../../clases/juego-adivina'
   styleUrls: ['./adivina-el-numero.component.css']
 })
 export class AdivinaElNumeroComponent implements OnInit {
- @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
 
+  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
+
+  gano : boolean
+  usuariosAdivina;
+  usuarioLogueado;
+  usuariosGeneral;
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;
   ocultarVerificar:boolean;
  
-  constructor() { 
+  constructor() {
+  
+
     this.nuevoJuego = new JuegoAdivina();
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
   }
+
+  ngOnInit() {
+  }
+
   generarnumero() {
     this.nuevoJuego.generarnumero();
     this.contador=0;
@@ -74,8 +85,10 @@ export class AdivinaElNumeroComponent implements OnInit {
     var x = document.getElementById("snackbar");
     if(ganador)
       {
+        this.gano = true;
         x.className = "show Ganador";
       }else{
+        this.gano = false;
         x.className = "show Perdedor";
       }
     var modelo=this;
@@ -84,9 +97,83 @@ export class AdivinaElNumeroComponent implements OnInit {
       modelo.ocultarVerificar=false;
      }, 3000);
     console.info("objeto",x);
+    this.cambiarResultadoBD();
+    this.cambiarResultadoUsuario();
   
    }  
-  ngOnInit() {
+   
+   verificarNuevoAdivina()
+  {
+    let flag = false;
+
+    for(let usu of this.usuariosAdivina)
+    {
+      if(usu.usuario == this.usuarioLogueado)
+      {
+        flag = true;
+        break;
+      }
+    }
+
+    if(!flag)
+    {
+      
+    }
   }
 
+  cambiarResultadoBD()
+  {
+    let flag = false; 
+
+    for(let usu of this.usuariosAdivina)
+    {
+      if(usu.usuario == this.usuarioLogueado)
+      {
+        this.modificarExistente(usu);
+        break;
+      }
+    }
+  }
+
+  cambiarResultadoUsuario()
+  {
+    let flag = false; 
+
+    for(let usu of this.usuariosGeneral)
+    {
+      if(usu.nombre == this.usuarioLogueado)
+      {
+        this.modificarUsuarioPuntaje(usu)
+        break;
+      }
+    }
+  }
+
+  modificarExistente(usuario)
+  {
+    if(this.gano == true)
+    {
+      usuario.gano++;
+
+    }
+    else
+    {
+      usuario.perdio++;
+
+    }
+  }
+  
+  modificarUsuarioPuntaje(usuario)
+  { 
+    if(this.gano == true)
+    {
+      usuario.gano++;
+ 
+    }
+    else
+    {
+      usuario.perdio++;
+
+    }
+  }
 }
