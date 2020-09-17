@@ -1,9 +1,10 @@
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css" />
 <div class="container">
   <div class="containerAnagrama">
     <h1 class="palabraRandom" id="palabraAnagrama">HAGA CLICK PARA COMENZAR</h1>
     <input type="text" placeholder="Ingrese la palabra pensada" [(ngModel)]="this.palabraIngresada">
-    <h2 id="mensajeAnagrama"></h2>
+    <div class="mensaje" id="claseMensaje">  <h2 id="mensajeAnagrama"></h2></div>
   </div>
-    <button *ngIf="!comenzado" (click)="comenzar()">COMENZAR</button>
-    <button *ngIf="comenzado" (click)="verificar()">VERIFICAR</button>
+  <button *ngIf="!comenzado" (click)="comenzar()">COMENZAR</button>
+  <button *ngIf="comenzado" (click)="verificar()">VERIFICAR</button>
 </div>

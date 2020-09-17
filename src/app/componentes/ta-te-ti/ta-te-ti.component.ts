@@ -21,7 +21,7 @@ export class TaTeTiComponent implements OnInit {
   celdas: number[][] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
   visibleJuego: boolean;
   visibleResultado: boolean = true;
-  mensaje;
+  mensaje:string;
   deshabilitado;
 
   constructor() {

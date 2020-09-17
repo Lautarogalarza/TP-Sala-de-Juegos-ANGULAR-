@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemoTestComponent implements OnInit {
 
-  
-  
-  
+
+
+
   comenzar: boolean = false;
   cuadrados = ["0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5"];
   mensaje: string;
@@ -21,26 +21,29 @@ export class MemoTestComponent implements OnInit {
   indexB: number;
   intentos: number;
   constructor() {
-    
     this.comenzar = true;
     this.cuadrados.sort(function (a, b) { return 0.5 - Math.random() });
     this.intentos = 15;
     this.ocultar();
-  }  
-  
-  
-  
+  }
+
+
+
   ngOnInit(): void {
   }
-  
-  comenzarJuego() {
-  }  
+
+  reiniciarJuego() {
+    this.comenzar = true;
+    this.cuadrados.sort(function (a, b) { return 0.5 - Math.random() });
+    this.intentos = 15;
+    this.ocultar();
+  }
 
   inicializarMostrar() {
     for (let i = 0; i < 12; i++) {
       this.mostrar[i] = true;
-    }  
-  }  
+    }
+  }
 
   jugar(casillero: number) {
     if (!this.mostrar[casillero]) {
@@ -61,53 +64,53 @@ export class MemoTestComponent implements OnInit {
             } else {
               this.mostrar[this.indexA] = false;
               this.mostrar[this.indexB] = false;
-            }  
+            }
 
-          }  
+          }
           this.tarjetaA = null;
           this.tarjetaB = null;
-        }  
-      }, 250);  
-    }  
-  }  
+        }
+      }, 250);
+    }
+  }
 
   ocultar() {
     for (let i = 0; i < 12; i++) {
       this.mostrar[i] = false;
-    }  
-  }  
+    }
+  }
 
   verficiarGanador() {
     let contador: number = 0;
     for (let i = 0; i < 12; i++) {
       if (this.mostrar[i]) {
         contador++;
-      }  
-    }  
+      }
+    }
     if (contador == 12) {
       this.jugadorGano();
-    }  
-  }  
+    }
+  }
 
   jugadorGano() {
     this.mostrarMensaje = true;
-    this.mensaje = "GANASTE! "+ "TU PUNTAJE FUE DE: "+ (15-this.intentos);
+    this.mensaje = "GANASTE! " + "TU PUNTAJE FUE DE: " + (15 - this.intentos);
     setTimeout(() => this.reiniciar(), 3000);
-  }  
+  }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
     this.mensaje = "PERDISTE";
     console.log(this.intentos);
     setTimeout(() => this.reiniciar(), 3000);
-  }  
+  }
 
   reiniciar() {
     this.mostrarMensaje = false;
     this.comenzar = false;
 
     this.inicializarMostrar();
-  }  
+  }
 
 
 

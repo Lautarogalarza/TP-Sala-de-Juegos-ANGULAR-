@@ -9,12 +9,12 @@ export class AnagramaComponent implements OnInit {
 
 
 
-  usuariosGeneral
+  usuariosGeneral;
   palabraIngresada : string = "";
   palabraAdivinar: string;
-  palabras:string[] = ['habian','usted','estados','hizo','nadie','paises','horas','posible','tarde','ley','importante',
-  'guerra','desarrollo','proceso','realidad','sentido','lado','cambio','mano','eran','estar','numero','rey','correr','repetir','escuela',
-  'matematica','genio','padrino', 'barco','pelota', 'hermoso', 'cambio', 'realidad', 'comenzar', 'teclado', 'monarca'];
+  palabras:string[] = ['nuez','bestia','auxilio','cuidar','cuadra','castigo','resultado','faro','mediodía','bucear','carretilla',
+  'tubos','invisible','gafas','nacimiento','entrar','erosionar','orejera','armario','torpedo','relleno','hermano','frito','jaulas','pegamento','cuarteto',
+  'pala','perros','horrible', 'mercado','emigrar', 'pupila', 'espina', 'erosionar', 'vivienda', 'lago', 'bondad'];
   comenzado : boolean = false;
 
   gano: boolean;
@@ -71,16 +71,16 @@ export class AnagramaComponent implements OnInit {
 
   mostrarMensaje(gano : boolean, mensaje : string)
   {
-    let elemento = document.getElementById("mensajeAnagrama");
+    let elemento = document.getElementById("claseMensaje");
 
     if(gano)
     {
-      elemento.style.color = "rgb(39, 185, 26)";
+      elemento.style.background = "#10d98d";
       $("#mensajeAnagrama").text(mensaje);
     }
     else
     {
-      elemento.style.color = "rgb(197, 30, 30)";
+      elemento.style.background = "#dc5e69";
       $("#mensajeAnagrama").text(mensaje);
     }
 

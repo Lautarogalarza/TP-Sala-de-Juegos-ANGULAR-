@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PiedraPapelTijeraComponent implements OnInit {
 
-  mensaje;
+  mensaje:string;
   intentosJugador: number = 0;
   intentosMaquina: number = 0;
-  jugadaMaquina;
-  jugadaJugador;
+  jugadaMaquina:string;
+  jugadaJugador:string;
   visibleJuego: boolean;
   visibleResultado: boolean = true;
   constructor() { }
