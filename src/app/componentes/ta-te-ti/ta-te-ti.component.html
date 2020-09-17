@@ -1,5 +1,6 @@
-<div class="containerGame" id="gameContainer">
-    <h1 class="presentacion">TA - TE - TI</h1>
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
+
+<div class="containerGame" id="gameContainer" [hidden]="visibleJuego" [ngClass]="{disabled: deshabilitado == true}" >
     <div class="container" id="containerTateti">
         <div class="fila">
             <div class="celda" (click)="seleccionarJugador(0,0, 'x')"><img src="" alt="" id="cell00" ></div>
@@ -17,10 +18,10 @@
             <div class="celda" (click)="seleccionarJugador(2,2, 'x')"><img src="" alt="" id="cell22"></div>
         </div>
     </div>
-    <h1 class="desafiar" *ngIf="!comenzado">Seleccione para comenzar</h1>
+    <!--<h1 class="desafiar" *ngIf="!comenzado">Seleccione para comenzar</h1>-->
 </div>
-<div class="containerMensaje" id="containerMensajeTateti" hidden>
-    <p id="mensajeTateti"></p>
+<div class="containerMensaje" id="containerMensajeTateti" [hidden]="visibleResultado">
+    <p> {{mensaje}} </p>
     <button (click)="reiniciar()">VOLVER A JUGAR</button>
     <button routerLink="/Juegos">RETIRARSE</button>
 </div>

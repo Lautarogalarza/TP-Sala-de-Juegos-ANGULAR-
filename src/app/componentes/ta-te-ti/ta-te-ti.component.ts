@@ -19,6 +19,10 @@ export class TaTeTiComponent implements OnInit {
   resultado: string = "";
   contJugados = 0;
   celdas: number[][] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+  visibleJuego: boolean;
+  visibleResultado: boolean = true;
+  mensaje;
+  deshabilitado;
 
   constructor() {
 
@@ -52,10 +56,11 @@ export class TaTeTiComponent implements OnInit {
   }
 
   esperarMaquina() {
-    $("#containerTateti").addClass("disabled");
+    this.deshabilitado = true;
+
     setTimeout(() => {
       this.seleccionarMaquina();
-      $("#containerTateti").removeClass("disabled");
+      this.deshabilitado = false;
     }, 1000);
   }
 
@@ -140,9 +145,9 @@ export class TaTeTiComponent implements OnInit {
   }
 
   mostrarMensaje(mensaje: string) {
-    $("#mensajeTateti").text(mensaje)
-    $("#containerMensajeTateti").attr("hidden", "");
-    $("#containerMensajeTateti").removeAttr("hidden");
+    this.mensaje = mensaje;
+    this.visibleJuego = true;
+    this.visibleResultado = false;
     this.cambiarResultadoBD();
     this.cambiarResultadoUsuario();
   }
@@ -159,8 +164,9 @@ export class TaTeTiComponent implements OnInit {
       }
     }
 
-    $("#gameContainer").removeAttr("hidden");
-    $("#containerMensajeTateti").attr("hidden", "");
+    this.visibleJuego = false;
+    this.visibleResultado = true;
+
 
   }
 

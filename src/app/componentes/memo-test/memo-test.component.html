@@ -1,10 +1,9 @@
 <div class="cnt-memotest">
 
     <div class="cnt-juego-memotest">
-        <label class="lbl-memotest">memotest</label>
-
       <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
       <h2 *ngIf="comenzar && !mostrarMensaje">{{intentos}} intentos</h2>
+
       <div *ngIf="comenzar && !mostrarMensaje" class="cnt-tablero-memotest">
           <button class="casilla_0" [ngClass]="{f_0: cuadrados[0] == '0' && mostrar[0], f_1: cuadrados[0] == '1' && mostrar[0], f_2: cuadrados[0] == '2' && mostrar[0], f_3: cuadrados[0] == '3' && mostrar[0],f_4: cuadrados[0] == '4' && mostrar[0], f_5: cuadrados[0] == '5' && mostrar[0]}" (click)="jugar(0)"></button>
           <button class="casilla_1" [ngClass]="{f_0: cuadrados[1] == '0' && mostrar[1], f_1: cuadrados[1] == '1' && mostrar[1], f_2: cuadrados[1] == '2' && mostrar[1], f_3: cuadrados[1] == '3' && mostrar[1],f_4: cuadrados[1] == '4' && mostrar[1], f_5: cuadrados[1] == '5' && mostrar[1]}" (click)="jugar(1)"></button>

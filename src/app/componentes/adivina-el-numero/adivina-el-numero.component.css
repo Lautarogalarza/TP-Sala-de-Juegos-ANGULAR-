@@ -2,8 +2,10 @@
 {
     margin: 0;
     padding: 0;
-    font-family: 'game';
-    color: black;
+    font-family: '8BITWONDERNominal';
+    font-weight: normal;
+    font-style: normal;
+    color: whitesmoke;
 }
 
 form {
@@ -14,8 +16,8 @@ form {
     width: 60%;
     height: 50vh;
     padding: 10px;
-    margin: 20% auto;
-    background: rgba(255, 255, 255, 0.9);
+    margin: 13% auto;
+    background:rgba(0,0,0,.5);
     border-radius: 10px;
 }
 
@@ -26,13 +28,13 @@ input[type=text], input[type=password] {
     margin: 8px 0;
     display: inline-block;
     box-sizing: border-box;
-    color: black;
+    color: whitesmoke;
     text-align: center;
 }
 
 button {
     /*background-color: #4CAF50;*/
-    color: white;
+    color: whitesmoke;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -47,7 +49,7 @@ label
 
 .verificar
 {
-    background: rgb(196, 44, 44);
+    background: rgb(232, 84, 84);
     border-radius: 5px;
 }
 
@@ -61,12 +63,15 @@ label
 
 .nuevoNumero
 {
-    background: rgb(44, 185, 63);
+    background: #0082fc;
     border-radius: 5px;
+    transition: 0.2s;
 }
 
 button:hover {
-    opacity: 0.8;
+    transform:scale(1.05);
+    background: #065eb1;
+    color: white;
 }
 
 .cancelbtn {
@@ -115,7 +120,6 @@ span.psw {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
-   
     color: #fff;
     text-align: center;
     border-radius: 2px;

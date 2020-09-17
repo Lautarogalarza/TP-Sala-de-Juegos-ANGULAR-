@@ -46,7 +46,7 @@ button {
 
 .cnt-tablero-memotest {
     position: relative;
-    top: -10%;
+    top: 10%;
     text-align: center;
     background: red(0,0,0,.5);
     width: 100%; 
@@ -54,7 +54,7 @@ button {
 }
 
 h2 {
-    color: var(--light-blue);
+    color: white;
 }
 
 .casilla_0, .casilla_1, .casilla_2, .casilla_3, .casilla_4, .casilla_5, .casilla_6, .casilla_7, .casilla_8, .casilla_9, .casilla_10, .casilla_11 {
@@ -130,31 +130,31 @@ h2 {
 }
 
 .f_0 {
-    background-image: url("../../../assets/imagenes/game_1.png");
+    background-image: url("../../../assets/imagenes/memo-1.png");
     background-size: 100% 100%;
 }
 
 .f_1 {
-    background-image: url("../../../assets/imagenes/game_2.png");
+    background-image: url("../../../assets/imagenes/memo-2.png");
     background-size: 100% 100%;
 }
 
 .f_2 {
-    background-image: url("../../../assets/imagenes/game_3.png");
+    background-image: url("../../../assets/imagenes/memo-3.png");
     background-size: 100% 100%;
 }
 
 .f_3 {
-    background-image: url("../../../assets/imagenes/game_4.png");
+    background-image: url("../../../assets/imagenes/memo-4.png");
     background-size: 100% 100%;
 }
 
 .f_4 {
-    background-image: url("../../../assets/imagenes/game_5.png");
+    background-image: url("../../../assets/imagenes/memo-5.png");
     background-size: 100% 100%;
 }
 
 .f_5 {
-    background-image: url("../../../assets/imagenes/game_6.png");
+    background-image: url("../../../assets/imagenes/memo-6.png");
     background-size: 100% 100%;
 }

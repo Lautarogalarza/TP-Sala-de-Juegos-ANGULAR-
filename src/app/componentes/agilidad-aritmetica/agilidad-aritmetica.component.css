@@ -2,8 +2,11 @@
 {
     padding: 0;
     margin: 0;
-    font-family: 'game';
+    font-family: '8BITWONDERNominal';
+    font-weight: normal;
+    font-style: normal;
     font-size: 1.2em;
+    color: #e5904f;
 }
 
 .container
@@ -17,9 +20,10 @@
     left: 50%;
     transform: translate(-50%,-50%);
     width: 60%;
-    height: 65%;
-    background: rgba(255, 255, 255, 0.9);
+    height: 70%;
+    background:rgba(0,0,0,.5);
     border-radius: 10px;
+    
 }
 
 form
@@ -33,22 +37,32 @@ input[type="text"]
     display: block;
     margin: 2% auto;
     text-align: center;
+    height: 8%;
+    font-size: 2vh;
+    color: #e54f5a;
 }
+
+::placeholder{
+    color: #e54f5a;
+}
+
 
 button
 {
-    background: rgb(170, 50, 50);
+    background: rgb(216, 132, 67);
     border: none;
     width: 20%;
     height: 15%;
     border-radius: 5px;
     transition: 0.2s;
     margin-top: 2%;
+    font-size: 3vh;
+    color: gray;
 }
 
 button:hover
 {
-    background: black;
+    background: rgb(233, 146, 16);
     color: ghostwhite;
 }
 
@@ -64,9 +78,10 @@ h2
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -20%;
+    top: 105%;
     width: 30%;
     height: 10%;
     background: rgb(204, 40, 40);
     border-radius: 5px;
+    color: whitesmoke;
 }

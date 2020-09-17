@@ -19,8 +19,6 @@ export class AgilidadAritmeticaComponent implements OnInit {
   numeroDos : number;
   operador : string;
   operadoradores : string[] = ["-", "+", "%", "*"];
-  enviarJuego :EventEmitter<any>= new EventEmitter<any>();
-  nuevoJuego : JuegoAgilidad;
   ocultarVerificar: boolean;
   Tiempo: number;
   repetidor:any;
@@ -71,12 +69,9 @@ export class AgilidadAritmeticaComponent implements OnInit {
   {
     let i =  Math.floor(Math.random() * (this.operadoradores.length - 0) + 0);
     this.operador = this.operadoradores[i];
-    this.numeroUno = Math.floor(Math.random() * (100 - 1) + 1);
-    this.numeroDos = Math.floor(Math.random() * (100 - 1) + 1);
+    this.numeroUno = Math.floor(Math.random() * (10 - 1) + 1);
+    this.numeroDos = Math.floor(Math.random() * (10 - 1) + 1);
 
-    $("#numeroUno").val(this.numeroUno);
-    $("#numeroDos").val(this.numeroDos);
-    $("#operador").val(this.operador);
   } 
 
   realizarCalculo() : boolean
@@ -159,9 +154,9 @@ export class AgilidadAritmeticaComponent implements OnInit {
 
   reiniciarVariables()
   {
-    $("#numeroUno").val("");
-    $("#numeroDos").val("");
-    $("#operador").val("");
+    this.operador=null;
+    this.numeroDos=null;
+    this.numeroUno=null;
     this.resultadoIngresado = null;
   }
 
