@@ -4,9 +4,9 @@
 {
     margin: 0;
     padding: 0;
-    font-family: '8BITWONDERNominal';
-    font-weight: normal;
-    font-style: normal;
+    font-family: VCR;
+    font-size: 3vh;
+    outline: none;
 }
 
 .container
@@ -54,6 +54,10 @@ input[type=text]
     outline: none;
 }
 
+::placeholder{
+    color: rgb(106, 104, 104);
+}
+
 h1
 {
     position: absolute;
@@ -71,11 +75,12 @@ button
     background: #b779ff;
     border-radius: 4px;
     border: none;
-    font-size: 2em;
+    font-size: 5vh;
     outline: none;
     transition: 0.5s;
     text-align: center;
     color: whitesmoke;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -83,6 +88,7 @@ button:hover
 {
     background: #7e5695;
     transform:scale(1.05);
+    color: ghostwhite;
 }
 
 

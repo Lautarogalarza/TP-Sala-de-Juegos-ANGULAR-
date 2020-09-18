@@ -20,6 +20,7 @@ export class MemoTestComponent implements OnInit {
   indexA: number;
   indexB: number;
   intentos: number;
+  escondido:boolean=true;
   constructor() {
     this.comenzar = true;
     this.cuadrados.sort(function (a, b) { return 0.5 - Math.random() });
@@ -94,21 +95,22 @@ export class MemoTestComponent implements OnInit {
 
   jugadorGano() {
     this.mostrarMensaje = true;
-    this.mensaje = "GANASTE! " + "TU PUNTAJE FUE DE: " + (15 - this.intentos);
+    this.mensaje = "GANASTE!!! " + "TU PUNTAJE FUE DE: " + (15 - this.intentos);
     setTimeout(() => this.reiniciar(), 3000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
-    this.mensaje = "PERDISTE";
+    this.mensaje = "PERDISTE!!";
     console.log(this.intentos);
+
     setTimeout(() => this.reiniciar(), 3000);
   }
 
   reiniciar() {
     this.mostrarMensaje = false;
     this.comenzar = false;
-
+    this.escondido=false;
     this.inicializarMostrar();
   }
 

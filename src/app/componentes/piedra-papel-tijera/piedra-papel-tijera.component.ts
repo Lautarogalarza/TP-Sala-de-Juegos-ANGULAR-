@@ -14,6 +14,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   jugadaJugador:string;
   visibleJuego: boolean;
   visibleResultado: boolean = true;
+  dashabilitado:boolean;
   constructor() { }
 
 
@@ -127,20 +128,24 @@ export class PiedraPapelTijeraComponent implements OnInit {
   VerificarGanador() {
 
     if (this.intentosJugador == 3) {
+      this.dashabilitado=true;
 
       setTimeout(() => {
         this.mensaje = '¡FELICITACIONES, SOS MEJOR QUE LA MAQUINA!';
         this.visibleJuego = true;
         this.visibleResultado = false;
+        this.dashabilitado=false;
       }, 600);
 
     }
 
     else if (this.intentosMaquina == 3) {
+      this.dashabilitado=true;
       setTimeout(() => {
         this.mensaje = 'PERDISTE, LA MAQUINA ES MEJOR QUE VOS!';
         this.visibleJuego = true;
         this.visibleResultado = false;
+        this.dashabilitado=false;
 
       }, 600);
     }

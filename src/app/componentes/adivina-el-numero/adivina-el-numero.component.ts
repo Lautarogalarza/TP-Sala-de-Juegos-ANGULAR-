@@ -18,7 +18,8 @@ export class AdivinaElNumeroComponent implements OnInit {
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;
-  ocultarVerificar:boolean; 
+  ocultarVerificar:boolean;
+  habilitado:boolean; 
   constructor() {
   
 
@@ -35,6 +36,7 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.nuevoJuego.generarnumero();
     this.contador=0;
     this.nuevoJuego.numeroIngresado=null;
+    this.habilitado=true;
   }
   verificar()
   {

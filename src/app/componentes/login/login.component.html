@@ -9,15 +9,16 @@
       
       <div class="subLogin">
 
-        <input type="email" id="fname" class="sinError" name="firstname" placeholder="Correo Electronico">
+        <input type="email" id="fname" class="sinError" name="firstname" placeholder="Correo Electronico" [(ngModel)]="usuario">
 
         <br>
 
-        <input type="password" id="lname" class="sinError" name="lastname" placeholder="Contraseña">
+        <input type="password" id="lname" class="sinError" name="lastname" placeholder="Contraseña" [(ngModel)]="clave">
         <br>
 
-        <button class="botonLogin">Ingresar</button>
+        <button class="botonLogin"  (click)="Entrar()" >Ingresar</button>
         <button class="botonRegister"  routerLink="/Registro" >Registrarse</button>
+        <button  class="botonCargar"  (click)="Cargar()">Cargar usuario</button>
       </div>
 
     </form>

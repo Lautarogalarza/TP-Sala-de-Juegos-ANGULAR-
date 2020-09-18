@@ -2,9 +2,8 @@
     margin: 0%;
     padding: 0%;
     outline: none;
-    font-family: '8BITWONDERNominal';
-    font-weight: normal;
-    font-style: normal;
+    font-family: VCR;
+    font-size: 4vh;
     color: whitesmoke;
     font-size: 3vh;
     
@@ -55,7 +54,6 @@
     background-color: lightskyblue;
     color:grey;
     border-radius: 4px;
-    font-size: 1rem;
     transition: 0.5s;
 }
 
@@ -67,7 +65,7 @@
 
 .cont-tablero-memotest {
     position: relative;
-    top: 10%;
+    top: 5%;
     text-align: center;
     background: red(0,0,0,.5);
     width: 100%; 
@@ -75,7 +73,8 @@
 }
 
 h2 {
-    color: white;
+    color:  #C5EDF4;
+    font-size: 5vh;
 }
 
 .casilla_0, .casilla_1, .casilla_2, .casilla_3, .casilla_4, .casilla_5, .casilla_6, .casilla_7, .casilla_8, .casilla_9, .casilla_10, .casilla_11 {

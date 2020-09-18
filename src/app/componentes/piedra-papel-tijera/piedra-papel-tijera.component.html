@@ -1,8 +1,6 @@
-<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
-
 
 <div id="containerGame" class="container" [hidden]="visibleJuego" >
-    <div class="jugador" >
+    <div class="jugador" [ngClass]="{disabled: dashabilitado == true}" >
         <h1>TU</h1>
         <div class="imagenes">
             <img src="../../../assets/imagenes/piedra.png" (click)="Juego(1)" id="piedra" alt="">
@@ -11,7 +9,7 @@
         </div>
         <h1 class="puntosJugador" id="puntosJugador">Puntos: {{intentosJugador}} </h1>
     </div>
-    <div class="maquina" [ngClass]="{fondoPiedra: jugadaMaquina == 'Piedra', fondoPapel: jugadaMaquina == 'Papel', fondoTijera: jugadaMaquina == 'Tijera',fondoVacio:jugadaMaquina==null}">
+    <div class="maquina"  [ngClass]="{fondoPiedra: jugadaMaquina == 'Piedra', fondoPapel: jugadaMaquina == 'Papel', fondoTijera: jugadaMaquina == 'Tijera',fondoVacio:jugadaMaquina==null}">
         <h1>MAQUINA</h1>
         <h1 class="puntosMaquina" id="puntosMaquina">Puntos: {{intentosMaquina}} </h1>
     </div>

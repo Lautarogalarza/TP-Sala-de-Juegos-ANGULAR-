@@ -2,9 +2,9 @@
 {
     margin: 0;
     padding: 0;
-    font-family: '8BITWONDERNominal';
-    font-weight: normal;
-    font-style: normal;
+    font-family: VCR;
+    font-size: 4vh;
+    outline: none;
     color: whitesmoke;
 }
 
@@ -126,38 +126,40 @@ span.psw {
     padding: 16px;
     position: fixed;
     z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 17px;
+    left: 45%;
+    bottom: 15%;
+    font-size: 2vh;
 }
 #snackbar.Ganador {
-    background-color: #059F2F;
+    background-color: #57d378;
+    left: 50%;
+    font-size: 3vh;
 }
 #snackbar.Perdedor {
-    background-color: #FF0000;
+    background-color: #eb5b5b;
 }
 #snackbar.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.8s, fadeout 0.8s 4s;
+    animation: fadein 0.8s, fadeout 0.8s 4s;
 }
 
 @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 15%; opacity: 1;}
 }
 
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    to {bottom: 15%; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;} 
+    from {bottom: 15%; opacity: 1;} 
     to {bottom: 0; opacity: 0;}
 }
 
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
+    from {bottom: 15%; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }

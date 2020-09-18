@@ -21,7 +21,7 @@
           <button class="casilla_11" [ngClass]="{f_0: cuadrados[11] == '0' && mostrar[11], f_1: cuadrados[11] == '1' && mostrar[111], f_2: cuadrados[11] == '2' && mostrar[11], f_3: cuadrados[11] == '3' && mostrar[11],f_4: cuadrados[11] == '4' && mostrar[11], f_5: cuadrados[11] == '5' && mostrar[11]}" (click)="jugar(11)"></button>
         </div>
 
-        <div class="mensajeReiniciar">
+        <div class="mensajeReiniciar" [hidden]="escondido" >
 
           <button class="botonReiniciar"type="button" (click)="reiniciarJuego()">VOLVER A JUGAR</button>
 
