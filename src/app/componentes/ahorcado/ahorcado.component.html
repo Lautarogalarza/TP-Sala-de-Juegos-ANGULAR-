@@ -1,1 +1,33 @@
-<p>ahorcado works!</p>
+<div class="containerGame" id="containerGame" [hidden]="visibleJuego">
+
+    <p class="letrasErradas"> {{letrasErradas}} </p>
+
+    <div class="flex-row no-wrap">
+        <img src="./../../../assets/imagenes/ahorcado_6.png"
+            [ngClass]="{fade: numeroFallos == 0, disabled: numeroFallos > 0}">
+        <img src="./../../../assets/imagenes/ahorcado_5.png"
+            [ngClass]="{fade: numeroFallos == 1, disabled: numeroFallos > 1}">
+        <img src="./../../../assets/imagenes/ahorcado_4.png"
+            [ngClass]="{fade: numeroFallos == 2, disabled: numeroFallos > 2}">
+        <img src="./../../../assets/imagenes/ahorcado_3.png"
+            [ngClass]="{fade: numeroFallos == 3, disabled: numeroFallos > 3}">
+        <img src="./../../../assets/imagenes/ahorcado_2.png"
+            [ngClass]="{fade: numeroFallos == 4, disabled: numeroFallos > 4}">
+        <img src="./../../../assets/imagenes/ahorcado_1.png"
+            [ngClass]="{fade: numeroFallos == 5, disabled: numeroFallos > 5}">
+        <img src="./../../../assets/imagenes/ahorcado_0.png"
+            [ngClass]="{fade: numeroFallos == 6, disabled: numeroFallos > 6}">
+    </div>
+
+    <p>{{palabraAdivinadaHastaAhora}}</p>
+    <div class="buttons">
+        <button *ngFor="let letra of letras" (click)="hastaElMomento(letra)" >{{letra}}</button  >
+    </div>
+</div>
+
+
+<div class="containerMensaje" id="containerMensaje" [hidden]="visibleResultado">
+    <p> {{mensaje}} </p>
+    <button class="botonMensaje" (click)="recargar()">VOLVER A JUGAR</button>
+    <button class="botonMensaje" routerLink="/Juegos">RETIRARSE</button>
+</div>
