@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListadosService } from '../../servicios/listados.service'
 
 @Component({
   selector: 'app-ahorcado',
@@ -26,9 +27,9 @@ export class AhorcadoComponent implements OnInit {
   visibleJuego: boolean = false;
   visibleResultado: boolean = true;
   mensaje: string
-  letraError:boolean=false;
+  letraError: boolean = false;
 
-  constructor() {
+  constructor(private listadoService: ListadosService) {
 
   }
 
@@ -69,8 +70,8 @@ export class AhorcadoComponent implements OnInit {
     if (!acerto) {
       this.letrasErradas += letra;
       this.numeroFallos++;
-      this.letraError=true;
-      
+      this.letraError = true;
+
     }
 
     return acerto;
@@ -86,9 +87,9 @@ export class AhorcadoComponent implements OnInit {
     }
 
     if (this.gano) {
-      this.mensaje = "GANASTER, SOS UN GENIO!!!";
+      this.mensaje = "GANASTE, SOS UN GENIO!!!";
     } else {
-      let palabra=this.palabraParaAdivinar.toUpperCase()
+      let palabra = this.palabraParaAdivinar.toUpperCase()
       this.mensaje = "PERDISTE LA PALABRA ERA " + palabra + ", MEJOR SUERTE LA PROXIMA";
 
     }
@@ -97,6 +98,16 @@ export class AhorcadoComponent implements OnInit {
   }
 
   recargar() {
+
+    if (this.mensaje == "GANASTE, SOS UN GENIO!!!") {
+      this.listadoService.JugadorGano("ahorcado");
+
+    } else {
+
+      this.listadoService.JugadorPerdio("ahorcado");
+    }
+
+
     this.visibleJuego = false;
     this.visibleResultado = true;
     this.letrasErradas = "";
@@ -111,10 +122,7 @@ export class AhorcadoComponent implements OnInit {
     setTimeout(() => {
       this.visibleJuego = true;
       this.visibleResultado = false;
-      this.cambiarResultadoBD();
-      this.cambiarResultadoUsuario();
     }, 500);
-
 
   }
 
@@ -128,31 +136,6 @@ export class AhorcadoComponent implements OnInit {
       }
     }
 
-    if (!flag) {
-
-    }
-  }
-
-  cambiarResultadoBD() {
-    let flag = false;
-
-    for (let usu of this.usuariosAhorcado) {
-      if (usu.usuario == this.usuarioLogueado) {
-        this.modificarExistente(usu);
-        break;
-      }
-    }
-  }
-
-  cambiarResultadoUsuario() {
-    let flag = false;
-
-    for (let usu of this.usuariosGeneral) {
-      if (usu.nombre == this.usuarioLogueado) {
-        this.modificarUsuarioPuntaje(usu)
-        break;
-      }
-    }
   }
 
   modificarExistente(usuario) {

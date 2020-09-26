@@ -1,29 +1,35 @@
-<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/press-start-2p" type="text/css"/>
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/press-start-2p" type="text/css" />
 <div class="container">
   <div class="loginContenedor">
-    
-    <form class="login">
+
+    <div class="login">
       <div class="imgcontainer">
-        <img src="../../../assets/imagenes/register.gif" alt="Avatar" class="avatar" max-width="104" >
+        <img src="../../../assets/imagenes/register.gif" alt="Avatar" class="avatar" max-width="104">
       </div>
-      
+
       <div class="subLogin">
 
-        <input type="email" id="fname" class="sinError" name="firstname" placeholder="Correo Electronico">
+        <input type="email" class="sinError" placeholder="Correo Electronico" [(ngModel)]="correo">
 
         <br>
 
-        <input type="password" id="lname" class="sinError" name="lastname" placeholder="Contraseña">
+        <input type="password" class="sinError" placeholder="Contraseña" [(ngModel)]="contraseia">
         <br>
 
-        <input type="password" id="lname" class="sinError" name="lastname" placeholder="Repita la contraseña">
+        <input type="password" class="sinError" placeholder="Repita la contraseña" [(ngModel)]="contraseniaOtraVez">
         <br>
 
-        <button class="botonLogin">Registrarse</button>
-        <button class="botonRegister"  routerLink="/Login" >Cancelar</button>
+        <button class="botonLogin" (click)="Register()">Registrarse</button>
+        <button class="botonRegister" routerLink="/Login">Cancelar</button>
+      </div>
+      
+      <div class="containerFlex">
+        <div *ngIf="mensaje" class="error">
+          <span> {{mensaje}}</span>
+        </div>
       </div>
 
-    </form>
+    </div>
   </div>
 
 </div>

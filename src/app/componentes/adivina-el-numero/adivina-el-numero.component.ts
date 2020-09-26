@@ -1,6 +1,7 @@
 
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAdivina } from '../../clases/juego-adivina'
+import { ListadosService } from "../../servicios/listados.service";
 
 @Component({
   selector: 'app-adivina-el-numero',
@@ -20,7 +21,7 @@ export class AdivinaElNumeroComponent implements OnInit {
   contador:number;
   ocultarVerificar:boolean;
   habilitado:boolean; 
-  constructor() {
+  constructor(private listadoService: ListadosService) {
   
 
     this.nuevoJuego = new JuegoAdivina();
@@ -103,7 +104,7 @@ export class AdivinaElNumeroComponent implements OnInit {
      }, 3000);
     console.info("objeto",x);
     this.cambiarResultadoBD();
-    this.cambiarResultadoUsuario();
+
   
    }  
    
@@ -120,39 +121,14 @@ export class AdivinaElNumeroComponent implements OnInit {
       }
     }
 
-    if(!flag)
-    {
-      
-    }
   }
 
   cambiarResultadoBD()
   {
-    let flag = false; 
-
-    for(let usu of this.usuariosAdivina)
-    {
-      if(usu.usuario == this.usuarioLogueado)
-      {
-        this.modificarExistente(usu);
-        break;
-      }
-    }
+    this.listadoService.JugadorGano("adivinaElNumero");
   }
 
-  cambiarResultadoUsuario()
-  {
-    let flag = false; 
 
-    for(let usu of this.usuariosGeneral)
-    {
-      if(usu.nombre == this.usuarioLogueado)
-      {
-        this.modificarUsuarioPuntaje(usu)
-        break;
-      }
-    }
-  }
 
   modificarExistente(usuario)
   {

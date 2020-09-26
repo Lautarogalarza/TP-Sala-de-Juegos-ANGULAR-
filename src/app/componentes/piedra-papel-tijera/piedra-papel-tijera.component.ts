@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListadosService } from '../../servicios/listados.service'
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -7,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PiedraPapelTijeraComponent implements OnInit {
 
-  mensaje:string;
+  mensaje: string;
   intentosJugador: number = 0;
   intentosMaquina: number = 0;
-  jugadaMaquina:string;
-  jugadaJugador:string;
+  jugadaMaquina: string;
+  jugadaJugador: string;
   visibleJuego: boolean;
   visibleResultado: boolean = true;
-  dashabilitado:boolean;
-  constructor() { }
+  dashabilitado: boolean;
 
+  constructor(private listadoService: ListadosService) { }
 
   ngOnInit(): void {
   }
@@ -36,19 +37,15 @@ export class PiedraPapelTijeraComponent implements OnInit {
       case 3:
         this.jugadaJugador = "Tijera"
         break;
-        
-      }
-      
-      this.JuegoMaquina();
-      
-      
+
     }
-    
-    
-    
-    
-    JuegoMaquina() {
-            
+
+    this.JuegoMaquina();
+
+  }
+
+  JuegoMaquina() {
+
     switch (Math.floor(Math.random() * 3 + 1)) {
       case 1:
         this.jugadaMaquina = "Piedra"
@@ -128,24 +125,26 @@ export class PiedraPapelTijeraComponent implements OnInit {
   VerificarGanador() {
 
     if (this.intentosJugador == 3) {
-      this.dashabilitado=true;
+      this.dashabilitado = true;
 
       setTimeout(() => {
         this.mensaje = '¡FELICITACIONES, SOS MEJOR QUE LA MAQUINA!';
         this.visibleJuego = true;
         this.visibleResultado = false;
-        this.dashabilitado=false;
+        this.dashabilitado = false;
+        this.listadoService.JugadorGano("pidraPapelTijera");
       }, 600);
 
     }
 
     else if (this.intentosMaquina == 3) {
-      this.dashabilitado=true;
+      this.dashabilitado = true;
       setTimeout(() => {
         this.mensaje = 'PERDISTE, LA MAQUINA ES MEJOR QUE VOS!';
         this.visibleJuego = true;
         this.visibleResultado = false;
-        this.dashabilitado=false;
+        this.dashabilitado = false;
+        this.listadoService.JugadorPerdio("pidraPapelTijera");
 
       }, 600);
     }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListadosService } from '../../servicios/listados.service'
 
 @Component({
   selector: 'app-anagrama',
@@ -16,12 +17,12 @@ export class AnagramaComponent implements OnInit {
   'tubos','invisible','gafas','nacimiento','entrar','erosionar','orejera','armario','torpedo','relleno','hermano','frito','jaulas','pegamento','cuarteto',
   'pala','perros','horrible', 'mercado','emigrar', 'pupila', 'espina', 'erosionar', 'vivienda', 'lago', 'bondad'];
   comenzado : boolean = false;
-
   gano: boolean;
   usuariosAnagrama;
   usuarioLogueado;
+  mensaje:string;
 
-  constructor() { }
+  constructor(private listadoService: ListadosService) { }
 
   ngOnInit() {
 
@@ -65,8 +66,7 @@ export class AnagramaComponent implements OnInit {
         this.gano = false;
      }
 
-     this.cambiarResultadoBD();
-     this.cambiarResultadoUsuario();
+
   }
 
   mostrarMensaje(gano : boolean, mensaje : string)
@@ -77,11 +77,14 @@ export class AnagramaComponent implements OnInit {
     {
       elemento.style.background = "#10d98d";
       $("#mensajeAnagrama").text(mensaje);
+      this.listadoService.JugadorGano("anagrama");
+
     }
     else
     {
       elemento.style.background = "#dc5e69";
       $("#mensajeAnagrama").text(mensaje);
+      this.listadoService.JugadorPerdio("anagrama");
     }
 
     setTimeout(() => {
@@ -111,39 +114,10 @@ export class AnagramaComponent implements OnInit {
       }
     }
 
-    if(!flag)
-    {
-
-    }
+    
   }
 
-  cambiarResultadoBD()
-  {
-    let flag = false; 
-
-    for(let usu of this.usuariosAnagrama)
-    {
-      if(usu.usuario == this.usuarioLogueado)
-      {
-        this.modificarExistente(usu);
-        break;
-      }
-    }
-  }
-
-  cambiarResultadoUsuario()
-  {
-    let flag = false; 
-
-    for(let usu of this.usuariosGeneral)
-    {
-      if(usu.nombre == this.usuarioLogueado)
-      {
-        this.modificarUsuarioPuntaje(usu)
-        break;
-      }
-    }
-  }
+ 
 
   modificarExistente(usuario)
   {

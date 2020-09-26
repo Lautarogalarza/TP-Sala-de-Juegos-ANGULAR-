@@ -1,45 +1,55 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from "../../servicios/auth.service";
 
-import {Subscription} from "rxjs";
+import { Subscription } from "rxjs";
 import { timer } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
   private subscription: Subscription;
-  usuario = '';
-  clave= '';
+  correo = '';
+  contrasenia = '';
   progreso: number;
-  progresoMensaje="esperando..."; 
-  logeando=true;
-  ProgresoDeAncho:string;
+  mensaje: string;
+  progresoMensaje = "esperando...";
+  logeando = true;
+  ProgresoDeAncho: string;
 
-  clase="progress-bar progress-bar-info progress-bar-striped ";
+  clase = "progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
-      this.progreso=0;
-      this.ProgresoDeAncho="0%";
+    private route: ActivatedRoute, private router: Router, private authService: AuthService) {
+    this.progreso = 0;
+    this.ProgresoDeAncho = "0%";
+  //  this.authService.logOutCurrentUser();
 
   }
 
   ngOnInit() {
   }
 
-  Cargar(){
-    this.usuario="admin";
-    this.clave="admin"
+  Cargar() {
+    this.correo = "admin";
+    this.contrasenia = "admin"
 
   }
 
+  Login() {
+    this.authService.login(this.correo, this.contrasenia).then(response => {
+      this.router.navigate(['/principal']);
+    }).catch(error => this.mensaje = error);
+
+  }
+
+
   Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
-      this.router.navigate(['/Principal']);
+    if (this.correo === 'admin' && this.contrasenia === 'admin') {
+      this.router.navigate(['/principal']);
     }
   }
 

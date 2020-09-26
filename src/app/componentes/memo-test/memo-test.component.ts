@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ListadosService } from '../../servicios/listados.service'
 @Component({
   selector: 'app-memo-test',
   templateUrl: './memo-test.component.html',
   styleUrls: ['./memo-test.component.css']
 })
 export class MemoTestComponent implements OnInit {
-
-
-
 
   comenzar: boolean = false;
   cuadrados = ["0", "0", "1", "1", "2", "2", "3", "3", "4", "4", "5", "5"];
@@ -20,15 +17,13 @@ export class MemoTestComponent implements OnInit {
   indexA: number;
   indexB: number;
   intentos: number;
-  escondido:boolean=true;
-  constructor() {
+  escondido: boolean = true;
+  constructor(private listadoService: ListadosService) {
     this.comenzar = true;
     this.cuadrados.sort(function (a, b) { return 0.5 - Math.random() });
     this.intentos = 15;
     this.ocultar();
   }
-
-
 
   ngOnInit(): void {
   }
@@ -96,12 +91,15 @@ export class MemoTestComponent implements OnInit {
   jugadorGano() {
     this.mostrarMensaje = true;
     this.mensaje = "GANASTE!!! " + "TU PUNTAJE FUE DE: " + (15 - this.intentos);
+    this.listadoService.JugadorGano("memotest");
+
     setTimeout(() => this.reiniciar(), 3000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
     this.mensaje = "PERDISTE!!";
+    this.listadoService.JugadorPerdio("memotest");
     console.log(this.intentos);
 
     setTimeout(() => this.reiniciar(), 3000);
@@ -110,13 +108,8 @@ export class MemoTestComponent implements OnInit {
   reiniciar() {
     this.mostrarMensaje = false;
     this.comenzar = false;
-    this.escondido=false;
+    this.escondido = false;
     this.inicializarMostrar();
   }
-
-
-
-
-
 
 }

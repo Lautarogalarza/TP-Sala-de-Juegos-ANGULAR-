@@ -1,24 +1,33 @@
 <div class="container">
   <div class="loginContenedor">
-    
+
     <form class="login">
       <div class="imgcontainer">
-        <img src="./assets/imagenes/login.gif" alt="Avatar" class="avatar" max-width="104" >
-     
+        <img src="./assets/imagenes/login.gif" alt="Avatar" class="avatar" max-width="104">
+
       </div>
-      
+
       <div class="subLogin">
 
-        <input type="email" id="fname" class="sinError" name="firstname" placeholder="Correo Electronico" [(ngModel)]="usuario">
+        <input type="email" id="fname" class="sinError" name="firstname" placeholder="Correo Electronico"
+          [(ngModel)]="correo">
 
         <br>
 
-        <input type="password" id="lname" class="sinError" name="lastname" placeholder="Contraseña" [(ngModel)]="clave">
+        <input type="password" id="lname" class="sinError" name="lastname" placeholder="Contraseña"
+          [(ngModel)]="contrasenia">
         <br>
 
-        <button class="botonLogin"  (click)="Entrar()" >Ingresar</button>
-        <button class="botonRegister"  routerLink="/Registro" >Registrarse</button>
-        <button  class="botonCargar"  (click)="Cargar()">Cargar usuario</button>
+        <button class="botonLogin" (click)="Login()">Ingresar</button>
+        <button class="botonRegister" routerLink="/registro">Registrarse</button>
+        <button class="botonCargar" (click)="Cargar()">Cargar usuario</button>
+
+        <div class="containerFlex">
+          <div *ngIf="mensaje" class="error">
+            <span> {{mensaje}}</span>
+          </div>
+        </div>
+
       </div>
 
     </form>

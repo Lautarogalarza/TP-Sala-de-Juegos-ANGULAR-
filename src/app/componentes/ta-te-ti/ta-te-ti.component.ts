@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ListadosService } from '../../servicios/listados.service'
 
 @Component({
   selector: 'app-ta-te-ti',
@@ -21,10 +22,10 @@ export class TaTeTiComponent implements OnInit {
   celdas: number[][] = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
   visibleJuego: boolean;
   visibleResultado: boolean = true;
-  mensaje:string;
-  deshabilitado;
+  mensaje: string;
+  deshabilitado: any;
 
-  constructor() {
+  constructor(private listadoService: ListadosService) {
 
   }
 
@@ -148,8 +149,7 @@ export class TaTeTiComponent implements OnInit {
     this.mensaje = mensaje;
     this.visibleJuego = true;
     this.visibleResultado = false;
-    this.cambiarResultadoBD();
-    this.cambiarResultadoUsuario();
+    this.cambiarResultadoBD(this.mensaje);
   }
 
   reiniciar() {
@@ -170,15 +170,20 @@ export class TaTeTiComponent implements OnInit {
 
   }
 
-  cambiarResultadoBD() {
-    let flag = false;
+  cambiarResultadoBD(mensaje: string) {
 
-    for (let usu of this.usuariosTateti) {
-      if (usu.usuario == this.usuarioLogueado) {
-        this.modificarExistente(usu);
-        break;
-      }
+    console.log(mensaje);
+
+    if (mensaje == "¡GANASTE!") {
+      this.listadoService.JugadorGano("tateti");
+
+    } else if (mensaje == "¡PERDISTE!") {
+      this.listadoService.JugadorPerdio("tateti");
     }
+    else{
+      console.log(mensaje);
+    }
+
   }
 
   verificarNuevoTateti() {
@@ -191,43 +196,9 @@ export class TaTeTiComponent implements OnInit {
       }
     }
 
-    if (!flag) {
-
-    }
   }
 
-  cambiarResultadoUsuario() {
-    let flag = false;
 
-    for (let usu of this.usuariosGeneral) {
-      if (usu.nombre == this.usuarioLogueado) {
-        this.modificarUsuarioPuntaje(usu)
-        break;
-      }
-    }
-  }
-
-  modificarExistente(usuario) {
-    if (this.resultado == "¡GANASTE!") {
-      usuario.gano++;
-
-    }
-    else if (this.resultado == "¡PERDISTE!") {
-      usuario.perdio++;
-
-    }
-  }
-
-  modificarUsuarioPuntaje(usuario) {
-    if (this.resultado == "¡GANASTE!") {
-      usuario.gano++;
-
-    }
-    else if (this.resultado == "¡PERDISTE!") {
-      usuario.perdio++;
-
-    }
-  }
 }
 
 

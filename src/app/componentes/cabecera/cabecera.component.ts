@@ -18,41 +18,41 @@ export class CabeceraComponent implements OnInit {
 
 
     switch (this.route.url) {
-      case "/Listado":
-        this.route.navigate(['/Principal']);
+      case "/listado":
+        this.route.navigate(['/principal']);
         break;
-        case "/Jugadores":
-        this.route.navigate(['/Principal']);
+        case "/jugadores":
+        this.route.navigate(['/principal']);
         break;
-      case "/Principal":
+      case "/principal":
         this.route.navigate(['']);
         break;
-      case "/QuienSoy":
-        this.route.navigate(['/Principal']);
+      case "/quienSoy":
+        this.route.navigate(['/principal']);
         break;
-      case "/Juegos":
-        this.route.navigate(['/Principal']);
+      case "/juegos":
+        this.route.navigate(['/principal']);
         break;
-      case "/Juegos/Adivina":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/adivina":
+        this.route.navigate(['/juegos']);
         break;
-      case "/Juegos/PiedraPapelTijera":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/piedraPapelTijera":
+        this.route.navigate(['/juegos']);
         break;
-      case "/Juegos/Agilidad":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/agilidad":
+        this.route.navigate(['/juegos']);
         break;
-      case "/Juegos/TaTeTi":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/tateti":
+        this.route.navigate(['/juegos']);
         break;
-      case "/Juegos/MemoTest":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/memotest":
+        this.route.navigate(['/juegos']);
         break;
-      case "/Juegos/Anagrama":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/anagrama":
+        this.route.navigate(['/juegos']);
         break;
-      case "/Juegos/Ahorcado":
-        this.route.navigate(['/Juegos']);
+      case "/juegos/ahorcado":
+        this.route.navigate(['/juegos']);
         break;
 
       default:

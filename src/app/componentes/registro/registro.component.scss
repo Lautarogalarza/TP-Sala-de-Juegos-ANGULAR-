@@ -2,6 +2,8 @@
     margin: 0%;
     padding: 0%;
     outline: none;
+    font-family: VCR;
+    font-size: 2vh;
 }
 
   .loginContenedor{
@@ -12,7 +14,61 @@
     text-align: center;
     justify-content: center;
   }
+  
+  .containerFlex{
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+ 
+  
+  .error{
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    align-items: center;
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    border-radius: 4px;
+    top:75%;
+    letter-spacing: 1px;
+    -webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    background-color: rgb(240, 74, 74);
 
+    span{
+      font-size: 2.5vh;
+    }
+  }
+
+ 
+  
+  @-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+              transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
   .login{
 
@@ -55,6 +111,7 @@ img.avatar {
     border-color:#C5EDF4;
     box-sizing: border-box;
     background-color: transparent;
+    color: #C5EDF4;
    
 }
 
@@ -62,18 +119,6 @@ img.avatar {
     color: #C5EDF4;
 }
 
-.error{
-  display: flex;
-  color: red;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 15%;
-  font-size: 1em;
-  font-family: "Arial Narrow", Arial, "Helvetica Condensed", Helvetica, sans-serif;
-  letter-spacing: 1px;
-}
 
 .botonRegister,.botonLogin{
 

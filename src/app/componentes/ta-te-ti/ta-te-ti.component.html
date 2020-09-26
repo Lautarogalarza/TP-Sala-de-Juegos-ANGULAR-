@@ -1,16 +1,14 @@
-<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
-
-<div class="containerGame" id="gameContainer" [hidden]="visibleJuego" [ngClass]="{disabled: deshabilitado == true}" >
+<div class="containerGame" id="gameContainer" [hidden]="visibleJuego" [ngClass]="{disabled: deshabilitado == true}">
     <div class="container" id="containerTateti">
         <div class="fila">
-            <div class="celda" (click)="seleccionarJugador(0,0, 'x')"><img src="" alt="" id="cell00" ></div>
-            <div class="celda" (click)="seleccionarJugador(0,1, 'x')"><img src="" alt="" id="cell01" ></div>
-            <div class="celda" (click)="seleccionarJugador(0,2, 'x')"><img src="" alt="" id="cell02" ></div>
+            <div class="celda" (click)="seleccionarJugador(0,0, 'x')"><img src="" alt="" id="cell00"></div>
+            <div class="celda" (click)="seleccionarJugador(0,1, 'x')"><img src="" alt="" id="cell01"></div>
+            <div class="celda" (click)="seleccionarJugador(0,2, 'x')"><img src="" alt="" id="cell02"></div>
         </div>
         <div class="fila">
             <div class="celda" (click)="seleccionarJugador(1,0, 'x')"><img src="" alt="" id="cell10"></div>
-            <div class="celda" (click)="seleccionarJugador(1,1, 'x')"><img src="" alt="" id="cell11" ></div>
-            <div class="celda" (click)="seleccionarJugador(1,2, 'x')"><img src="" alt="" id="cell12" ></div>
+            <div class="celda" (click)="seleccionarJugador(1,1, 'x')"><img src="" alt="" id="cell11"></div>
+            <div class="celda" (click)="seleccionarJugador(1,2, 'x')"><img src="" alt="" id="cell12"></div>
         </div>
         <div class="fila">
             <div class="celda" (click)="seleccionarJugador(2,0, 'x')"><img src="" alt="" id="cell20"></div>
@@ -18,10 +16,9 @@
             <div class="celda" (click)="seleccionarJugador(2,2, 'x')"><img src="" alt="" id="cell22"></div>
         </div>
     </div>
-    <!--<h1 class="desafiar" *ngIf="!comenzado">Seleccione para comenzar</h1>-->
 </div>
 <div class="containerMensaje" id="containerMensajeTateti" [hidden]="visibleResultado">
     <p> {{mensaje}} </p>
     <button (click)="reiniciar()">VOLVER A JUGAR</button>
-    <button routerLink="/Juegos">RETIRARSE</button>
+    <button routerLink="/juegos">RETIRARSE</button>
 </div>
