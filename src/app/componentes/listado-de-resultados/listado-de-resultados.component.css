@@ -12,14 +12,12 @@ table, th, td {
     border: 1px solid  #C5EDF4;
   }
 
-
 .tabla
 {
     position: absolute;
     top: 15%;
     left: 15%;
     transform: rotate(-50%,-50%);
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     border-radius: 10px;
     width: 70%;
