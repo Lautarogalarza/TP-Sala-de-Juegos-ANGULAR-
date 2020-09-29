@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute, private router: Router, private authService: AuthService) {
     this.progreso = 0;
     this.ProgresoDeAncho = "0%";
-  //  this.authService.logOutCurrentUser();
+    //  this.authService.logOutCurrentUser();
 
   }
 
@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
   }
 
   Cargar() {
-    this.correo = "admin";
-    this.contrasenia = "admin"
+    this.correo = "invitado@invitado.com";
+    this.contrasenia = "111111"
 
   }
 
