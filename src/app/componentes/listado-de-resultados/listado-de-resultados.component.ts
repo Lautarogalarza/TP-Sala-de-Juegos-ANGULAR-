@@ -1,5 +1,7 @@
 
-import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -7,19 +9,22 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
   styleUrls: ['./listado-de-resultados.component.css']
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
- listado: Array<any>;
+
+  listado: any
+  juegos: Observable<any[]>;
+  listaJuegos: any[];
 
 
-  constructor() {
-   }
+  constructor(private context: AngularFireDatabase) {
+
+    this.juegos = this.context.list('juegos').valueChanges();
+    this.juegos.subscribe(juegos => this.listaJuegos = juegos, error => console.log(error));
+
+  }
 
   ngOnInit() {
 
   }
 
-  ver() {
-    console.info(this.listado);
-  }
 
 }

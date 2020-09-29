@@ -1,5 +1,3 @@
-
-
 <app-cabecera></app-cabecera>
 <table class="tabla">
   <thead>
@@ -10,15 +8,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let juego of listado">
-      <td>{{juego.usuario}} </td> 
-      <td>{{juego.gano}}</td>   
-      <td>{{juego.perdio}}</td>     
-    </tr>
-    <tr>
-      <td>aasdasd</td>
-      <td>asdasd </td> 
-      <td>asdasd</td>   
+    <tr *ngFor="let user of listaUsuarios">
+      <td>{{user.correo}} </td>
+      <td>{{user.gano}}</td>
+      <td>{{user.perdio}}</td>
     </tr>
   </tbody>
 </table>

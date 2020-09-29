@@ -3,17 +3,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: '8BITWONDERNominal';
-    font-weight: normal;
-    font-style: normal;
+    font-family: VCR;
+    font-size: 2vh;
     text-decoration: none;
 }
+
+table, th, td {
+    border: 1px solid  #C5EDF4;
+  }
 
 
 .tabla
 {
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 15%;
     transform: rotate(-50%,-50%);
     font-family: arial, sans-serif;
@@ -22,7 +25,6 @@
     width: 70%;
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
-    border: 1px solid;
     border-color: #C5EDF4;
 }
 

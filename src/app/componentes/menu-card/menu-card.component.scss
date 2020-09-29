@@ -36,10 +36,16 @@ body {
   
 }
 
+.contenedor{
+  display: flex;
+  justify-content: center;
+}
+
 .b-game-card {
   position: relative;
   z-index: 1;
   width: 100%;
+  top: 20%;
   padding-bottom: 150%;
   perspective: 1000px;
   

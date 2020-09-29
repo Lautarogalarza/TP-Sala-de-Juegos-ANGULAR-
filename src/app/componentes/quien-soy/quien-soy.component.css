@@ -1,3 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: VCR;
+    font-size: 3vh;
+    outline: none;
+}
+
+h1{
+    font-size: 5vh;
+}
+
+.parrafo{
+    margin-bottom: 14px;
+}
+
 .imagenDeQuienSoy{
     width: 100%;
    
@@ -7,7 +23,7 @@ body {
     line-height: 1.8;
     color: #f5f6f7;
 }
-p {font-size: 16px;}
+p {font-size: 2vh;}
 .margin {margin-bottom: 45px;}
 .bg-1 { 
     background-color: #1abc9c; /* Green */
@@ -26,7 +42,7 @@ p {font-size: 16px;}
     color: #fff;
 }
 .container-fluid {
-    padding-top: 70px;
+    padding-top: 60px;
     padding-bottom: 70px;
     background-attachment: fixed;
 }
@@ -64,6 +80,8 @@ p {font-size: 16px;}
     height: 10%;
 }
 
+
+
 img.avatar {
     margin-top: 10px;   
     width: 40%;
@@ -97,7 +115,7 @@ img.avatar{
   .contactContainerL{
     position: fixed;
     bottom: 1em;
-    right: 7em;
+    right: 5em;
     
    
   }

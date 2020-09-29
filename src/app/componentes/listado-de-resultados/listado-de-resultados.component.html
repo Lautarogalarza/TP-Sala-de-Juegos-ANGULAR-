@@ -1,4 +1,3 @@
-
 <app-cabecera></app-cabecera>
 <table class="tabla">
   <thead>
@@ -10,17 +9,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let juego of listado">
+    <tr *ngFor="let juego of listaJuegos">
       <td>{{juego.juego}}</td>
-      <td>{{juego.usuario}} </td> 
-      <td>{{juego.gano}}</td>   
-      <td>{{juego.perdio}}</td>     
-    </tr>
-    <tr>
-      <td>aasdasd</td>
-      <td>asdasd </td> 
-      <td>asdasd</td>   
-      <td>asdasd</td> 
+      <td>{{juego.correo}} </td>
+      <td>{{juego.gano}}</td>
+      <td>{{juego.perdio}}</td>
     </tr>
   </tbody>
 </table>

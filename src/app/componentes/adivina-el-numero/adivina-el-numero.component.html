@@ -1,9 +1,8 @@
-<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
-<h2></h2>
+
 <form name="juego">
 
    <label *ngIf="habilitado" >INGRESE NUMERO:  </label>  <input  *ngIf="habilitado"  [(ngModel)]="nuevoJuego.numeroIngresado" name="numeroIngresado" type="text" class="form-control" style="width:50%" />
-    <!--<h1>{{nuevoJuego.numeroIngresado}}  </h1>-->
+
  
     <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="verificar">Verificar</button></h2>
  

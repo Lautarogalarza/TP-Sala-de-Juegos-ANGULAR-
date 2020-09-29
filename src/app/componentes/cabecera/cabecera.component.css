@@ -1,13 +1,33 @@
+*{
+  z-index: 1001;
+  font-family: VCR;
+  font-size: 8vh;
+  color: #C5EDF4;
+  text-align: center;
+  letter-spacing: 1px;
+}
 
+h1{
+  position: fixed;
+  width: 100vw;
+  background: rgba(0,0,0,.5);
+}
+
+.container{
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
+  
+}
 
 .imgcontainer {
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 100vw;
     background: rgba(0,0,0,.5);
 }
 
 .botoncontainer {
-    position: absolute;
+  position: fixed;
     right: 2%;
 }
 
@@ -19,7 +39,7 @@
 }
 
 .salircontainer {
-    position: absolute;
+  position: fixed;
     left:1%;
 }
 
