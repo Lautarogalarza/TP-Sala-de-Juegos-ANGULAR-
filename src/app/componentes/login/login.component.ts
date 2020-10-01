@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router, ActivatedRoute, ParamMap } from "@angular/router";
 import { AuthService } from "../../servicios/auth.service";
 
 import { Subscription } from "rxjs";
-import { timer } from 'rxjs';
+import { timer } from "rxjs";
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
-
   private subscription: Subscription;
-  correo = '';
-  contrasenia = '';
+  correo = "";
+  contrasenia = "";
   progreso: number;
   mensaje: string;
   progresoMensaje = "esperando...";
@@ -23,34 +22,29 @@ export class LoginComponent implements OnInit {
   clase = "progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
-    private route: ActivatedRoute, private router: Router, private authService: AuthService) {
+    private route: ActivatedRoute,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.progreso = 0;
     this.ProgresoDeAncho = "0%";
-    //  this.authService.logOutCurrentUser();
-
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   Cargar() {
-    this.correo = "invitado@invitado.com";
-    this.contrasenia = "111111"
-
+    this.correo = "admin@admin.com";
+    this.contrasenia = "123456";
   }
 
   Login() {
-    this.authService.login(this.correo, this.contrasenia).then(response => {
-      this.router.navigate(['/principal']);
-    }).catch(error => this.mensaje = error);
-
+    this.authService
+      .login(this.correo, this.contrasenia)
+      .then((response) => {
+        this.router.navigate(["/principal"]);
+      })
+      .catch((error) => (this.mensaje = error));
   }
 
-
-  Entrar() {
-    if (this.correo === 'admin' && this.contrasenia === 'admin') {
-      this.router.navigate(['/principal']);
-    }
-  }
 
 }
