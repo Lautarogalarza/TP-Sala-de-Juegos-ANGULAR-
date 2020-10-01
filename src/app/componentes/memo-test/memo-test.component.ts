@@ -66,7 +66,7 @@ export class MemoTestComponent implements OnInit {
           this.tarjetaA = null;
           this.tarjetaB = null;
         }
-      }, 250);
+      }, 1000);
     }
   }
 
